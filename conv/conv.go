@@ -37,7 +37,7 @@ func GetXmls() {
 func Conv(xml GetFileInfo.BasicInfo) (string, error) {
 	// danmaku2ass danmaku.xml -s 1280x720 -dm 15 -fs 45 -a 50 -o danmaku.ass
 	ass := strings.Replace(xml.FullPath, ".xml", ".ass", 1)
-	bat := strings.Join([]string{"danmaku2ass", xml.FullPath, "-s", "1280x720", "-dm", "15", "-fs", "45", "-a", "50", "-r", "-o", ass}, " ")
+	bat := strings.Join([]string{"danmaku2ass", xml.FullPath, "-s", "640x480", "-dm", "15", "-fs", "35", "-r", "-o", ass}, " ")
 	cmd := exec.Command("bash", "-c", bat)
 	//cmd := exec.Command("danmaku2ass", xml.FullPath, "-s", "1280x720", "-dm", "15", "-fs", "45", "-a", "50", "-r", "-o", ass)
 	output, err := cmd.CombinedOutput()
